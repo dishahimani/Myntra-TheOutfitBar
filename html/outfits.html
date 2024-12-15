@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outfit Inspiration</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../outfits.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.0/dist/css/uikit.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.0/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.0/dist/js/uikit-icons.min.js"></script>
+</head>
+<body>
+
+ <!-- Navigation Bar -->
+ <div class="navigation" id="affix">
+    <div class="left-section">
+      <div class="logo">
+        <img src="../images/myntra_logo.png" alt="Logo">
+      </div>
+      <div class="company-name">
+        The Outfit Bar
+      </div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="upload.html">Outfit Inspiration</a></li>
+      <li><a href="fashion_feed1.html">Mix n Match</a></li>
+    </ul>
+  </div>
+
+<!--Outfit Inspiration starts-->
+
+    <div class="container">
+        <h1>Outfit Inspiration</h1>
+        <div id="carousel" class="carousel">
+            <span class="prev" onclick="showOutfit(-1)">&#10094;</span>
+            <span class="next" onclick="showOutfit(1)">&#10095;</span>
+            <img id="outfitImage" src="" alt="Outfit Image">
+            <div class="description">
+                <h2 id="lookTitle"></h2>
+                <p id="outfitDescription"></p>
+                <ul id="clothingItems"></ul>
+            </div>
+        </div>
+        <div id="carouselContainer">
+            <div uk-slider="clsActivated: uk-transition-active; center: true; finite: false; pause-on-hover: true; autoplay: true; autoplay-interval: 3500;">
+                <div class="uk-position-relative uk-visible-toggle uk-light">
+                    <ul class="uk-slider-items uk-child-width-1-2@s uk-grid" id="carouselItems">
+                        <!-- Carousel items will be populated here -->
+                    </ul>
+                    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+                    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
+                </div>
+                <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const outfits = {
+            formal: [
+                {
+                    title: 'Look 1',
+                    image: '../Women - database/white shirt/formals/pencilskirt.jpg',
+                    description: 'White shirt paired with a black pencil skirt and gold minimal jewelry.',
+                    clothingItems: [
+                        { name: 'White Shirt', url: 'https://www.myntra.com/shirts/shaye/shaye-women-white-buttondown-casual-shirt/16154712/buy' },
+                        { name: 'Black Pencil Skirt', url: 'https://www.myntra.com/skirts/purple+feather/purple-feather-women-pencil-skirt/17306262/buy' },
+                        { name: 'Gold Minimal Jewelry', url: 'https://www.myntra.com/necklace-and-chains/accessorize/accessorize-metal-hart-shape-minimal-chain/29467286/buy' }
+                    ],
+                    carousel: [
+                        { image: 'https://static.pexels.com/photos/36764/marguerite-daisy-beautiful-beauty.jpg', link: 'https://www.myntra.com/shirts/shaye/shaye-women-white-buttondown-casual-shirt/16154712/buy' },
+                        { image: 'https://static.pexels.com/photos/36764/marguerite-daisy-beautiful-beauty.jpg', link: 'https://www.myntra.com/skirts/purple+feather/purple-feather-women-pencil-skirt/17306262/buy' },
+                        { image: 'https://static.pexels.com/photos/36764/marguerite-daisy-beautiful-beauty.jpg', link: 'https://www.myntra.com/necklace-and-chains/accessorize/accessorize-metal-hart-shape-minimal-chain/29467286/buy' }
+                    ]
+                }
+                // Add more looks here
+            ],
+            trendy: [
+                {
+                    title: 'Look 1',
+                    image: '../Women - database/white shirt/trendy/ripped_jeans.jpg',
+                    description: 'White shirt paired with ripped jeans and a statement necklace.',
+                    clothingItems: [
+                        { name: 'White Shirt', url: 'https://myntra.com/white-shirt' },
+                        { name: 'Ripped Jeans', url: 'https://myntra.com/ripped-jeans' },
+                        { name: 'Statement Necklace', url: 'https://myntra.com/statement-necklace' }
+                    ],
+                    carousel: [
+                        { image: 'https://static.pexels.com/photos/36764/marguerite-daisy-beautiful-beauty.jpg', link: 'https://www.myntra.com/shirts/shaye/shaye-women-white-buttondown-casual-shirt/16154712/buy' },
+                        { image: 'https://static.pexels.com/photos/36764/marguerite-daisy-beautiful-beauty.jpg', link: 'https://www.myntra.com/skirts/purple+feather/purple-feather-women-pencil-skirt/17306262/buy' },
+                        { image: 'https://static.pexels.com/photos/36764/marguerite-daisy-beautiful-beauty.jpg', link: 'https://www.myntra.com/necklace-and-chains/accessorize/accessorize-metal-hart-shape-minimal-chain/29467286/buy' }
+                    ]
+                }
+                // Add more looks here
+            ]
+        };
+
+        let currentIndex = 0;
+        const style = 'formal'; // For demonstration, you can change this to 'trendy'
+        const currentOutfits = outfits[style];
+
+        function showOutfit(n) {
+            currentIndex = (currentIndex + n + currentOutfits.length) % currentOutfits.length;
+            const outfit = currentOutfits[currentIndex];
+            document.getElementById('lookTitle').innerText = outfit.title;
+            document.getElementById('outfitImage').src = outfit.image;
+            document.getElementById('outfitDescription').innerText = outfit.description;
+
+            const clothingItemsList = document.getElementById('clothingItems');
+            clothingItemsList.innerHTML = ''; // clear the list
+
+            outfit.clothingItems.forEach((item) => {
+                const listItem = document.createElement('li');
+                const anchor = document.createElement('a');
+                anchor.href = item.url;
+                anchor.textContent = item.name;
+                listItem.appendChild(anchor);
+                clothingItemsList.appendChild(listItem);
+            });
+
+            populateCarousel(outfit.carousel);
+        }
+
+        function populateCarousel(carouselItems) {
+            const carouselItemsContainer = document.getElementById('carouselItems');
+            carouselItemsContainer.innerHTML = carouselItems.map(item => `
+                <li>
+                    <div class="uk-card uk-card-default">
+                        <div class="uk-card-media-top">
+                            <a href="${item.link}">
+                                <img src="${item.image}" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </li>
+            `).join('');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            showOutfit(0);
+        });
+    </script>
+
+    <!--Footer-->
+    <footer class="padding-top bg_black">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6 footer_column">
+                    <h4 class="heading">Who are we?</h4>
+                    <hr class="half_space">
+                    <p class="half_space"></p>
+                    <p>At The Outfit Bar, we are a passionate team of Students and tech enthusiasts dedicated to creating a dynamic and inclusive platform for GenZ in terms of fashion. Our mission is to make fashion choices easier and accessible via myntra.</p>
+                </div>
+                <div class="col-md-3 col-sm-6 footer_column">
+                    <h4 class="heading">Quick Links</h4>
+                    <hr class="half_space">
+                    <ul class="widget_links">
+                        <li><a href="fashion_feed1.html">Outfit Inspiration</a></li>
+                        <li><a href="upload.html">Mix n Match</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-sm-6 footer_column">
+                    <h4 class="heading">Subscribe</h4>
+                    <hr class="half_space">
+                    <p>Join our community and get fashion updates <i class="icon-dollar"></i> Sign up for exclusive offers.</p>
+                    <div id="result1" class="text-center"></div>
+                    <form action="http://www.designedbydash.com/dash/form.php" method="post" class="newsletter">
+                        <input type="text" placeholder="Enter your email" id="email" name="email" required="">
+                        <button type="submit" class="button">Submit</button>
+                    </form>
+                </div>
+                <div class="col-md-3 col-sm-6 footer_column">
+                    <h4 class="heading">Contact Us</h4>
+                    <hr class="half_space">
+                    <p>Need help with outfit ideas? Reach out to us.</p>
+                    <ul class="widget_links">
+                        <li><i class="icon-location"></i> <a href="#">INDIA</a></li>
+                        <li><i class="icon-phone4"></i> <a href="tel:1234567890">123-456-7890</a></li>
+                        <li><i class="icon-dollar"></i> <a href="mailto:someone@example.com">someone@example.com</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

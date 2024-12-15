@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outfit Inspiration</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/outfits.css">
+    <link rel="stylesheet" type="text/css" href="../css/carousel_with_description.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.0/dist/css/uikit.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.0/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.0/dist/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/css/uikit.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/js/uikit.min.js"></script><link rel="stylesheet" href="./style.css">
+    
+    <script src="script.js"></script>
+</head>
+<body>
+    
+ <!-- Navigation Bar -->
+ <div class="navigation" id="affix">
+    <div class="left-section">
+      <div class="logo">
+        <img src="../images/myntra_logo.png" alt="Logo">
+      </div>
+      <div class="company-name">
+        The Outfit Bar
+      </div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="upload.html">Outfit Inspiration</a></li>
+      <li><a href="fashion_feed1.html">Mix n Match</a></li>
+    </ul>
+  </div>
+
+<!--Outfit Inspiration starts-->
+
+<section id="outfit looks">
+<div class="container">
+    <h1>Outfit Inspiration</h1>
+    <div id="carousel" class="carousel">
+        <span class="prev" onclick="showOutfit(-1)">&#10094;</span>
+        <span class="next" onclick="showOutfit(1)">&#10095;</span>
+        <img id="outfitImage" src="" alt="Outfit Image">
+        <div class="description">
+            <h2 id="lookTitle"></h2>
+            <p id="outfitDescription"></p>
+            <ul id="clothingItems"></ul>
+        </div>
+    </div>
+</div>
+</section>
+
+<script>
+    const outfits = {
+        formal: [
+            {
+                title: 'Look 1',
+                image: '../Women - database/white shirt/formals/pencilskirt.jpg',
+                description: 'White shirt paired with a black pencil skirt and gold minimal jewelry.',
+                clothingItems: [
+                    { name: 'White Shirt', url: 'https://www.myntra.com/shirts/van+heusen+woman/van-heusen-woman-formal-shirt/19846666/buy' },
+                    { name: 'Black Pencil Skirt', url: 'https://www.myntra.com/skirts/fithub/fithub-knee-length-formal-pencil-skirt/25336532/buy' },
+                    { name: 'Gold Minimal Jewelry', url: 'https://www.myntra.com/necklace-and-chains/giva/giva-925-sterling-silver-gold-plated-minimal-chain/23735824/buy' }
+                ]
+            },
+            {
+                title: 'Look 2',
+                image: '../Women - database/white shirt/formals/ws + black blazer set.png',
+                description: 'White shirt paired with a black blazer and pant set.',
+                clothingItems: [
+                    { name: 'White Shirt', url: 'https://www.myntra.com/shirts/van+heusen+woman/van-heusen-woman-formal-shirt/19846666/buy' },
+                    { name: 'Black Blazer', url: 'https://www.myntra.com/blazers/door74/door74-women-black-solid-blazer/13375138/buy' },
+                    { name: 'Pant Set', url: 'https://www.myntra.com/trousers/blissclub/blissclub-women-comfort-flared-high-rise-trousers/22804392/buy' }
+                ]
+            },
+            {
+                title: 'Look 3',
+                image: '../Women - database/white shirt/formals/ws + trousers.jpg',
+                description: 'White shirt with formal trousers and a brown belt.',
+                clothingItems: [
+                    { name: 'White Shirt', url: 'https://www.myntra.com/shirts/h%26m/hm-women-white-formal-shirt/13908196/buy' },
+                    { name: 'Formal Trousers', url: 'https://www.myntra.com/trousers/fithub/fithub-women-sharp-slim-fit-cotton-formal-trouser/26486892/buy' },
+                    { name: 'Brown Belt', url: 'https://www.myntra.com/belts/kastner/kastner-women-brown-trendy-belt/16502756/buy' }
+                ]
+            },
+            {
+                title: 'Look 4',
+                image: '../Women - database/white shirt/formals/ws + beige pant + blazer.jpg',
+                description: 'White shirt paired with a beige blazer and matching pants.',
+                clothingItems: [
+                    { name: 'White Shirt', url: 'https://www.myntra.com/shirts/h%26m/hm-women-white-formal-shirt/13908196/buy' },
+                    { name: 'Beige Blazer', url: 'https://www.myntra.com/blazers/fablestreet/fablestreet-notched-lapel-single-breasted-blazer/29063286/buy' },
+                    { name: 'Matching Pants', url: 'https://www.myntra.com/trousers/fithub/fithub-women-sharp-slim-fit-cotton-formal-trouser/26486892/buy' }
+                ]
+            },
+            {
+                title: 'Look 5',
+                image: '../Women - database/white shirt/formals/ws + beige skirt.jpg',
+                description: 'White shirt paired with Beige Skirt',
+                clothingItems: [
+                    { name: 'White Shirt', url: 'https://www.myntra.com/shirts/h%26m/hm-women-white-formal-shirt/13908196/buy' },
+                    { name: 'Beige Skirt', url: 'https://www.myntra.com/skirts/sassafras+basics/sassafras-basics-pencil-midi-skirt/23286074/buy' },
+                    { name: 'Black Pumps', url: 'https://www.myntra.com/heels/lino+perros/lino-perros-women-floral-textured-block-heel-pumps/24094058/buy' }
+                ]
+            },
+            {
+                title: 'Look 6',
+                image: '../Women - database/white shirt/formals/white shirt + blue jeans.png',
+                description: 'White shirt with Blue Jeans and a silver watch.',
+                clothingItems: [
+                    { name: 'White Shirt', url: 'https://www.myntra.com/shirts/van+heusen+woman/van-heusen-woman-formal-shirt/19846666/buy' },
+                    { name: 'Blue Jeans', url: 'https://www.myntra.com/jeans/roadster/roadster-women-blue-skinny-fit-mid-rise-clean-look-stretchable-cropped-jeans/2319515/buy' },
+                    { name: 'Silver Watch', url: 'https://www.myntra.com/watch-gift-set/joker+%26+witch/joker--witch-women-skylar-silver-watch-gift-set/23311752/buy' }
+                ]
+            }
+        ],
+        trendy: [
+            {
+                title: 'Look 1',
+                image: '../Women - database/white shirt/trendy/ripped_jeans.jpg',
+                description: 'White shirt paired with ripped jeans and a statement necklace.',
+                clothingItems: [
+                    { name: 'White Shirt', url: 'https://myntra.com/white-shirt' },
+                    { name: 'Ripped Jeans', url: 'https://myntra.com/ripped-jeans' },
+                    { name: 'Statement Necklace', url: 'https://myntra.com/statement-necklace' }
+                ]
+            },
+            {
+                title: 'Look 2',
+                image: '../Women - database/white shirt/trendy/skater_skirt.jpg',
+                description: 'White shirt paired with a skater skirt and ankle boots.',
+                clothingItems: [
+                    { name: 'White Shirt', url: 'https://myntra.com/white-shirt' },
+                    { name: 'Skater Skirt', url: 'https://myntra.com/skater-skirt' },
+                    { name: 'Ankle Boots', url: 'https://myntra.com/ankle-boots' }
+                ]
+            },
+            {
+                title: 'Look 3',
+                image: '../Women - database/white shirt/trendy/high_waist_shorts.jpg',
+                description: 'White shirt with high waist shorts and a crossbody bag.',
+                clothingItems: [
+                    { name: 'White Shirt', url: 'https://myntra.com/white-shirt' },
+                    { name: 'High Waist Shorts', url: 'https://myntra.com/high-waist-shorts' },
+                    { name: 'Crossbody Bag', url: 'https://myntra.com/crossbody-bag' }
+                ]
+            },
+            {
+                title: 'Look 4',
+                image: '../Women - database/white shirt/trendy/denim_jacket.jpg',
+                description: 'White shirt paired with a denim jacket and black leggings.',
+                clothingItems: [
+                    { name: 'White Shirt', url: 'https://myntra.com/white-shirt' },
+                    { name: 'Denim Jacket', url: 'https://myntra.com/denim-jacket' },
+                    { name: 'Black Leggings', url: 'https://myntra.com/black-leggings' }
+                ]
+            },
+            {
+                title: 'Look 5',
+                image: '../Women - database/white shirt/trendy/maxi_skirt.jpg',
+                description: 'White shirt with a floral maxi skirt and a wide-brim hat.',
+                clothingItems: [
+                    { name: 'White Shirt', url: 'https://myntra.com/white-shirt' },
+                    { name: 'Floral Maxi Skirt', url: 'https://myntra.com/floral-maxi-skirt' },
+                    { name: 'Wide-Brim Hat', url: 'https://myntra.com/wide-brim-hat' }
+                ]
+            },
+            {
+                title: 'Look 6',
+                image: '../Women - database/white shirt/trendy/cargo_pants.jpg',
+                description: 'White shirt paired with green cargo pants and sneakers.',
+                clothingItems: [
+                    { name: 'White Shirt', url: 'https://myntra.com/white-shirt' },
+                    { name: 'Green Cargo Pants', url: 'https://myntra.com/green-cargo-pants' },
+                    { name: 'Sneakers', url: 'https://myntra.com/sneakers' }
+                ]
+            }
+        ]
+    };
+
+    let currentIndex = 0;
+    const style = 'formal'; // For demonstration, you can change this to 'trendy'
+    const currentOutfits = outfits[style];
+
+    function showOutfit(n) {
+        currentIndex = (currentIndex + n + currentOutfits.length) % currentOutfits.length;
+        const outfit = currentOutfits[currentIndex];
+        document.getElementById('lookTitle').innerText = outfit.title;
+        document.getElementById('outfitImage').src = outfit.image;
+        document.getElementById('outfitDescription').innerText = outfit.description;
+
+        const clothingItemsList = document.getElementById('clothingItems');
+        clothingItemsList.innerHTML = ''; // clear the list
+
+        outfit.clothingItems.forEach((item) => {
+            const listItem = document.createElement('li');
+            const anchor = document.createElement('a');
+            anchor.href = item.url;
+            anchor.textContent = item.name;
+            listItem.appendChild(anchor);
+            clothingItemsList.appendChild(listItem);
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        showOutfit(0);
+    });
+</script>
+
+<!--Suggestions for u section-->
+<section id="suggestions" class="container suggestions">
+    <h2>Suggestions for You</h2>
+    <div class="image-grid">
+        <div class="image-item">
+            <img src="../Women - database/white shirt/formals/look1_sugg.png" alt="Image 1">
+        </div>
+        <div class="image-item">
+            <img src="../Women - database/white shirt/formals/look2_sugg.png" alt="Image 2">
+        </div>
+        <div class="image-item">
+            <img src="../Women - database/white shirt/formals/look3_sug.png" alt="Image 3">
+        </div>
+       
+    </div>
+</section>
+</body>
+</html>
+
+
+<!--Footer-->
+<footer class="padding-top bg_black">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-6 footer_column">
+          <h4 class="heading">Who are we?</h4>
+          <hr class="half_space">
+          <p class="half_space"></p>
+          <p>At The Outfit Bar, we are a passionate team of Students and tech enthusiasts dedicated to creating a dynamic and inclusive platform for GenZ in terms of fashion. Our mission is to make fashion choices easier and accessible via myntra.</p>
+        </div>
+        <div class="col-md-3 col-sm-6 footer_column">
+          <h4 class="heading">Quick Links</h4>
+          <hr class="half_space">
+          <ul class="widget_links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="fashion_feed1.html">Outfit Inspiration</a></li>
+            <li><a href="upload.html">Mix n Match</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 col-sm-6 footer_column">
+          <h4 class="heading">Newsletter</h4>
+          <hr class="half_space">
+          <p class="icon"><i class="icon-dollar"></i>Sign up with your name and email to get updates fresh updates.</p>
+          <div id="result1" class="text-center"></div>        
+          
+         <form action="http://themesindustry.us13.list-manage.com/subscribe/post-json?u=4d80221ea53f3a4487ddebd93&id=494727d648&c=?" method="get" onSubmit="return false" class="newsletter">
+            <div class="form-group">
+              <input type="email" placeholder="E-mail Address" required name="EMAIL" id="EMAIL" class="form-control" />
+            </div>
+            <div class="form-group">
+              <input type="submit" class="btn-submit button3" value="Subscribe" />
+            </div>
+          </form>
+        </div>
+        <div class="col-md-3 col-sm-6 footer_column">
+          <h4 class="heading">Get in Touch</h4>
+          <hr class="half_space">
+          <p></p>
+         
+          <p class="address"> <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="black" d="m19.23 15.26l-2.54-.29a1.99 1.99 0 0 0-1.64.57l-1.84 1.84a15.045 15.045 0 0 1-6.59-6.59l1.85-1.85c.43-.43.64-1.03.57-1.64l-.29-2.52a2.001 2.001 0 0 0-1.99-1.77H5.03c-1.13 0-2.07.94-2 2.07c.53 8.54 7.36 15.36 15.89 15.89c1.13.07 2.07-.87 2.07-2v-1.73c.01-1.01-.75-1.86-1.76-1.98"/></svg> +91-8938185056</p>
+          <p class="address"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="black" d="M4 20q-.825 0-1.412-.587T2 18V6q0-.825.588-1.412T4 4h16q.825 0 1.413.588T22 6v12q0 .825-.587 1.413T20 20zm8-7l8-5V6l-8 5l-8-5v2z"/></svg><a href="office@blognest.com">office@theoutfitbar.com</a></p>
+        </div> 
+      </div>
+    </div>
+  </footer>
+  
+    
+</body>
+</html>

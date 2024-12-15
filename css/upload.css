@@ -1,0 +1,74 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+}
+header {
+    color: #FFF;
+    height: 100vh;
+    text-align: center;
+    position: relative; /* Ensure positioning context for full-image */
+    overflow: hidden; /* Hide overflow to prevent scroll bars */
+    padding-top: 20px; /* Adjusted padding */
+    margin-bottom: -20px; /* Adjusted margin to overlap with section */
+}
+.full-image {
+    height: 100vh; /* Set height to cover viewport */
+    width: 100%; /* Set width to fill header */
+    object-fit: cover; /* Maintain aspect ratio and cover container */
+    position: absolute; /* Position image absolutely */
+    top: 0;
+    left: 0;
+}
+.header-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1;
+    width: 100%;
+}
+h1 {
+    font-size: 40px !important; /* Larger font size for the title */
+    line-height: 1.2;
+    margin: 0;
+    padding: 0;
+    color: #FFF; /* Ensure text color is white */
+}
+p {
+    font-size: 1.5rem; /* Larger font size for the subtitle */
+    color: #FFF !important; /* Ensure text color is white */
+    margin-bottom: 20px; /* Adjusted spacing */
+}
+.down-arr {
+    font-size: 2rem;
+    padding: 20px;
+    z-index: 1;
+    color: #FFF; /* Ensure arrow color is white */
+}
+.section-1 {
+    padding: 20px 20px; /* Increased padding */
+    text-align: center;
+    margin-top: -20px; /* Overlap with header */
+}
+.section-1 h3 {
+    font-size: 1.8rem; /* Increased font size for section 1 */
+}
+input[type="file"],
+input[type="text"],
+button {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 3px;
+    font-size: 1.2rem;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    box-sizing: border-box;
+}

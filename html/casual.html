@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outfit Inspiration</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/outfits.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.0/dist/css/uikit.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.0/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.0/dist/js/uikit-icons.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    
+ <!-- Navigation Bar -->
+ <div class="navigation" id="affix">
+    <div class="left-section">
+      <div class="logo">
+        <img src="../images/myntra_logo.png" alt="Logo">
+      </div>
+      <div class="company-name">
+        The Outfit Bar
+      </div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="upload.html">Outfit Inspiration</a></li>
+      <li><a href="fashion_feed1.html">Mix n Match</a></li>
+    </ul>
+  </div>
+
+<!--Outfit Inspiration starts-->
+
+<section id="outfit looks">
+<div class="container">
+    <h1>Outfit Inspiration</h1>
+    <div id="carousel" class="carousel">
+        <span class="prev" onclick="showOutfit(-1)">&#10094;</span>
+        <span class="next" onclick="showOutfit(1)">&#10095;</span>
+        <img id="outfitImage" src="" alt="Outfit Image">
+        <div class="description">
+            <h2 id="lookTitle"></h2>
+            <p id="outfitDescription"></p>
+            <ul id="clothingItems"></ul>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    const outfits = {
+        formal: [
+            {
+                title: 'Look 1',
+                image: '../Women - database/casual/bs - 1x8-Outfit-1.jpg',
+                description: 'Black bodysuit paired with jeans, handbag and a blazer',
+                clothingItems: [
+                    { name: 'Black bodysuit', url: 'https://www.myntra.com/bodysuit/sassafras+basics/sassafras-basics-ribbed-round-neck-bodysuit/23286128/buy' },
+                    { name: 'Beige Blazer', url: 'https://www.myntra.com/blazers/mango/mango-notched-lapel-collar-regular-fit-single-breasted-blazer/29474616/buy' },
+                    { name: 'Blue Jeans', url: 'https://www.myntra.com/jeans/levis/levis-women-mid-rise-711-skinny-fit-heavy-fade-stretchable-jeans/25806820/buy' },
+                    { name: 'Red heels', url: 'https://www.myntra.com/heels/dressberry/dressberry-red-round-toe-block-heeled-pumps/27480874/buy' },
+                    { name: 'Black Handbag', url: 'https://www.myntra.com/handbags/mango/mango-structured-sling-bag/28197818/buy' }
+                ]
+            },
+            {
+                title: 'Look 2',
+                image: '../Women - database/casual/bs - 1x8-Outfit-2.jpg',
+                description: 'Black bodysuit with high waist jeans, a kimono, sandals and a straw handbag',
+                clothingItems: [
+                    { name: 'Black bodysuit', url: 'https://www.myntra.com/bodysuit/sassafras+basics/sassafras-basics-ribbed-round-neck-bodysuit/23286128/buy' },
+                    { name: 'Highwaist Jeans', url: 'https://www.myntra.com/jeans/levis/levis-women-726-flare-high-rise-low-distress-light-fade-stretchable-jeans/23638708/buy' },
+                    { name: 'Kimono', url: 'https://www.myntra.com/shrug/minos/minos-floral-printed-sheer-longline-open-front-shrug/28448756/buy' },
+                    { name: 'Sandals', url: 'https://www.myntra.com/heels/dressberry/dressberry-braided-design-ankle-loop-slim-heel-sandals/21631848/buy' },
+                    { name: 'Straw Hanbag', url: 'https://www.myntra.com/handbags/habere+india/habere-india-beige-straw-sling-bag/17455612/buy' }
+                ]
+            },
+            {
+                title: 'Look 3',
+                image: '../Women - database/casual/bs-1x8-Outfit-3.jpg',
+                description: 'Black bodysuit with a dark denim, a trench, heels and a handbag',
+                clothingItems: [
+                    { name: 'Black bodysuit', url: 'https://www.myntra.com/bodysuit/sassafras+basics/sassafras-basics-ribbed-round-neck-bodysuit/23286128/buy' },
+                    { name: 'Dark Denim', url: 'https://www.myntra.com/jeans/mango/mango-women-loose-fit-frayed-hem-stretchable-jeans/27352276/buy' },
+                    { name: 'TrenchCoat', url: 'https://www.myntra.com/coats/trendyol/trendyol-notched-lapel-longline-waist-tie-ups-trenchcoat/22571540/buy' },
+                    { name: 'Handbag', url: 'https://www.myntra.com/handbags/lavie/lavie-rex-women-black-large-satchel-handbag/2407586/buy' },
+                    { name: 'Heels', url: 'https://www.myntra.com/heels/theater/theater-women-twiggy-club-paradise-colourblocked-square-toe-block-mules-with-backstrap/23540658/buy' }
+                ]
+            },
+            {
+                title: 'Look 4',
+                image: '../Women - database/casual/bs-1x8-Outfit-4.jpg',
+                description: 'Black bodysuit with a oversized blazer, grey jeans, sneakers and a crossbody',
+                clothingItems: [
+                    { name: 'Black bodysuit', url: 'https://www.myntra.com/bodysuit/sassafras+basics/sassafras-basics-ribbed-round-neck-bodysuit/23286128/buy' },
+                    { name: 'Oversized blazer', url: 'https://www.myntra.com/blazers/stylecast/stylecast-black-single-breasted-blazer/29308514/buy' },
+                    { name: 'Gray jeans', url: 'https://www.myntra.com/jeans/calvin+klein+jeans/calvin-klein-jeans-women-bootcut-jeans/21201108/buy' },
+                    { name: 'Sneakers', url: 'https://www.myntra.com/casual-shoes/converse/converse-unisex-chuck-taylor-all-star-high-top-sneakers/23059422/buy' },
+                    { name: 'Crossbody', url: 'https://www.myntra.com/handbags/styli/styli-black-textured-crossbody-shoulder-bag-with-quilted/29891430/buy' }
+                ]
+            },
+            {
+                title: 'Look 5',
+                image: '../Women - database/casual/bs-1x8-Outfit-5.jpg',
+                description: 'Black bodysuit with favourite jeans, a leather jacket, flats and handbag',
+                clothingItems: [
+                    { name: 'Black bodysuit', url: 'https://www.myntra.com/bodysuit/sassafras+basics/sassafras-basics-ribbed-round-neck-bodysuit/23286128/buy' },
+                    { name: 'Torn Jeans', url: 'https://www.myntra.com/jeans/freakins/freakins-women-blue-flared-high-rise-mildly-distressed-cotton-light-fade-jeans/18230482/buy' },
+                    { name: 'Black Leather Jacket', url: 'https://www.myntra.com/jackets/tboj/tboj-lapel-collar-water-resistant-anti-odour-leather-jacket/24913012/buy' },
+                    { name: 'Red Flats', url: 'https://www.myntra.com/flats/allen+solly/allen-solly-women-horsebit-detail-ballerinas/25441260/buy' },
+                    { name: 'Black Handbag', url: 'https://www.myntra.com/handbags/styli/styli-black-textured-crossbody-shoulder-bag-with-quilted/29891430/buy' }
+                ]
+            },
+            {
+                title: 'Look 6',
+                image: '../Women - database/casual/bs-1x8-Outfit-6.jpg',
+                description: 'Black bodysuit with slouchy trousers, denim jacket, sneakers and crossbody bag',
+                clothingItems: [
+                    { name: 'Black bodysuit', url: 'https://www.myntra.com/bodysuit/sassafras+basics/sassafras-basics-ribbed-round-neck-bodysuit/23286128/buy' },
+                    { name: 'Slouchy Trousers', url: 'https://www.myntra.com/trousers/trendyol/trendyol-women-beige-trousers/19560484/buy' },
+                    { name: 'Denim Jacket', url: 'https://www.myntra.com/jackets/dolce+crudo/dolce-crudo-spread-collar-denim-jacket/26144482/buy' },
+                    { name: 'Sneakers', url: 'https://www.myntra.com/casual-shoes/converse/converse-unisex-chuck-taylor-all-star-high-top-sneakers/23059422/buy' },
+                    { name: 'Crossbody Bag', url: 'https://www.myntra.com/handbags/styli/styli-black-textured-crossbody-shoulder-bag-with-quilted/29891430/buy' }
+                ]
+            }
+        ],
+    };
+
+    let currentIndex = 0;
+    const style = 'formal'; // For demonstration, you can change this to 'trendy'
+    const currentOutfits = outfits[style];
+
+    function showOutfit(n) {
+        currentIndex = (currentIndex + n + currentOutfits.length) % currentOutfits.length;
+        const outfit = currentOutfits[currentIndex];
+        document.getElementById('lookTitle').innerText = outfit.title;
+        document.getElementById('outfitImage').src = outfit.image;
+        document.getElementById('outfitDescription').innerText = outfit.description;
+
+        const clothingItemsList = document.getElementById('clothingItems');
+        clothingItemsList.innerHTML = ''; // clear the list
+
+        outfit.clothingItems.forEach((item) => {
+            const listItem = document.createElement('li');
+            const anchor = document.createElement('a');
+            anchor.href = item.url;
+            anchor.textContent = item.name;
+            listItem.appendChild(anchor);
+            clothingItemsList.appendChild(listItem);
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        showOutfit(0);
+    });
+</script>
+</section>
+
+</body>
+</html>
+
+
+<!--Footer-->
+<footer class="padding-top bg_black">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-6 footer_column">
+          <h4 class="heading">Who are we?</h4>
+          <hr class="half_space">
+          <p class="half_space"></p>
+          <p>At The Outfit Bar, we are a passionate team of Students and tech enthusiasts dedicated to creating a dynamic and inclusive platform for GenZ in terms of fashion. Our mission is to make fashion choices easier and accessible via myntra.</p>
+        </div>
+        <div class="col-md-3 col-sm-6 footer_column">
+          <h4 class="heading">Quick Links</h4>
+          <hr class="half_space">
+          <ul class="widget_links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="fashion_feed1.html">Outfit Inspiration</a></li>
+            <li><a href="upload.html">Mix n Match</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 col-sm-6 footer_column">
+          <h4 class="heading">Newsletter</h4>
+          <hr class="half_space">
+          <p class="icon"><i class="icon-dollar"></i>Sign up with your name and email to get updates fresh updates.</p>
+          <div id="result1" class="text-center"></div>        
+          
+         <form action="http://themesindustry.us13.list-manage.com/subscribe/post-json?u=4d80221ea53f3a4487ddebd93&id=494727d648&c=?" method="get" onSubmit="return false" class="newsletter">
+            <div class="form-group">
+              <input type="email" placeholder="E-mail Address" required name="EMAIL" id="EMAIL" class="form-control" />
+            </div>
+            <div class="form-group">
+              <input type="submit" class="btn-submit button3" value="Subscribe" />
+            </div>
+          </form>
+        </div>
+        <div class="col-md-3 col-sm-6 footer_column">
+          <h4 class="heading">Get in Touch</h4>
+          <hr class="half_space">
+          <p></p>
+         
+          <p class="address"> <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="black" d="m19.23 15.26l-2.54-.29a1.99 1.99 0 0 0-1.64.57l-1.84 1.84a15.045 15.045 0 0 1-6.59-6.59l1.85-1.85c.43-.43.64-1.03.57-1.64l-.29-2.52a2.001 2.001 0 0 0-1.99-1.77H5.03c-1.13 0-2.07.94-2 2.07c.53 8.54 7.36 15.36 15.89 15.89c1.13.07 2.07-.87 2.07-2v-1.73c.01-1.01-.75-1.86-1.76-1.98"/></svg> +91-8938185056</p>
+          <p class="address"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="black" d="M4 20q-.825 0-1.412-.587T2 18V6q0-.825.588-1.412T4 4h16q.825 0 1.413.588T22 6v12q0 .825-.587 1.413T20 20zm8-7l8-5V6l-8 5l-8-5v2z"/></svg><a href="office@blognest.com">office@theoutfitbar.com</a></p>
+        </div> 
+      </div>
+    </div>
+  </footer>
+  
+    
+</body>
+</html>

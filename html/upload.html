@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Outfit Inspirator</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/upload1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  
+<style>
+    
+
+
+</style>
+</head>
+<body>
+    
+  <!--Navigation Bar-->
+  <div class="navigation" id="affix">
+    <div class="left-section">
+      <div class="logo">
+          <img src="../images/myntra_logo.png" alt="Logo">
+      </div>
+      <div class="company-name">
+          The Outfit Bar
+      </div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="upload.html">Outfit Inspiration</a></li>
+      <li><a href="fashion_feed1.html">Mix n Match</a></li>
+    </ul>
+</div>
+
+<!--Middle Section-->
+<div id="content">
+    <div class="full-image-wrap">
+        <img class="full-image" src="https://assets.vogue.com/photos/615cb9788b6ad31d46ef2976/master/w_2560%2Cc_limit/00_story.jpg" alt="">
+        <div class="header-content">
+            <h1 class="column-xs main-xs-center">The Outfit Inspirator</h1>
+            <p class="column-xs main-xs-center">The one stop where you can get the best outfit inspiration for your existing clothes</p>
+        </div>
+    </div>
+    <div class="text-content">
+        <p>Got a new piece of clothing but not sure how to style it? Stuck wearing the same old top the same way forever? Only worn that dress once but want to give it a fresh look? Wondering how to match your latest fashion find with your existing wardrobe? Look no further—you've come to the right place! The Outfit Inspirator makes it easy: upload a photo of your clothing or link directly from Myntra. Select the occasion you're dressing for—whether it's a casual day out, a formal event, or something in between—and we'll handle the rest. Our curated collection of looks from top fashion sources ensures you'll step out looking stylish and confident every time. Don't wait—try it now!</p>
+    </div>
+</div>
+
+<!--Upload Section-->
+<div class="upload-section">
+    <h1 class="section-heading">Outfit Inspiration</h1>
+    <p class="section-description">Upload a picture of the piece of clothing you want outfit inspiration for:</p>
+    <input type="file" id="uploadImage" accept="image/*">
+    <h2>OR</h2>
+    <input type="text" id="imageUrl" placeholder="Enter URL from Myntra">
+    <button onclick="showStyleOptions()">Done</button>
+
+    <div id="styleOptions" style="display:none;">
+        <h2>Choose Style:</h2>
+        <button onclick="showLoading('formal')">Formal</button>
+        <button onclick="showLoading('trendy')">Trendy</button>
+        <button onclick="showLoading('casual')">Casual</button>
+    </div>
+</div>
+
+<!--Footer-->
+<footer class="padding-top bg_black">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-6 footer_column">
+          <h4 class="heading">Who are we?</h4>
+          <hr class="half_space">
+          <p class="half_space"></p>
+          <p>At The Outfit Bar, we are a passionate team of Students and tech enthusiasts dedicated to creating a dynamic and inclusive platform for GenZ in terms of fashion. Our mission is to make fashion choices easier and accessible via myntra.</p>
+        </div>
+        <div class="col-md-3 col-sm-6 footer_column">
+          <h4 class="heading">Quick Links</h4>
+          <hr class="half_space">
+          <ul class="widget_links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="fashion_feed1.html">Outfit Inspiration</a></li>
+            <li><a href="upload.html">Mix n Match</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 col-sm-6 footer_column">
+          <h4 class="heading">Newsletter</h4>
+          <hr class="half_space">
+          <p class="icon"><i class="icon-dollar"></i>Sign up with your name and email to get updates fresh updates.</p>
+          <div id="result1" class="text-center"></div>        
+          
+         <form action="http://themesindustry.us13.list-manage.com/subscribe/post-json?u=4d80221ea53f3a4487ddebd93&id=494727d648&c=?" method="get" onSubmit="return false" class="newsletter">
+            <div class="form-group">
+              <input type="email" placeholder="E-mail Address" required name="EMAIL" id="EMAIL" class="form-control" />
+            </div>
+            <div class="form-group">
+              <input type="submit" class="btn-submit button3" value="Subscribe" />
+            </div>
+          </form>
+        </div>
+        <div class="col-md-3 col-sm-6 footer_column">
+          <h4 class="heading">Get in Touch</h4>
+          <hr class="half_space">
+          <p></p>
+         
+          <p class="address"> <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="black" d="m19.23 15.26l-2.54-.29a1.99 1.99 0 0 0-1.64.57l-1.84 1.84a15.045 15.045 0 0 1-6.59-6.59l1.85-1.85c.43-.43.64-1.03.57-1.64l-.29-2.52a2.001 2.001 0 0 0-1.99-1.77H5.03c-1.13 0-2.07.94-2 2.07c.53 8.54 7.36 15.36 15.89 15.89c1.13.07 2.07-.87 2.07-2v-1.73c.01-1.01-.75-1.86-1.76-1.98"/></svg> +91-8938185056</p>
+          <p class="address"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="black" d="M4 20q-.825 0-1.412-.587T2 18V6q0-.825.588-1.412T4 4h16q.825 0 1.413.588T22 6v12q0 .825-.587 1.413T20 20zm8-7l8-5V6l-8 5l-8-5v2z"/></svg><a href="office@blognest.com">office@theoutfitbar.com</a></p>
+        </div> 
+      </div>
+    </div>
+  </footer>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    $(document.body).on('click', 'a[href*="#"]', function(e) {
+        e.preventDefault();
+        $('html,body').animate({
+            scrollTop: $(this.hash).offset().top
+        }, 900);
+    });
+
+    $(window).on('scroll', function() {
+        var scrolled = $(window).scrollTop();
+        var height = $(window).height();
+        if (scrolled < height) {
+            $('.full-image').css({
+                'top': -scrolled * .5
+            });
+        }
+    });
+
+    function showStyleOptions() {
+        document.getElementById('styleOptions').style.display = 'block';
+    }
+
+    function showLoading(style) {
+        const clothingItem = document.getElementById('uploadImage').value || document.getElementById('imageUrl').value;
+        localStorage.setItem('style', style);
+        localStorage.setItem('clothingItem', clothingItem);
+
+        document.body.innerHTML = `<h2>Loading...</h2>
+                                   <p>Curating a ${style} outfit ${clothingItem}</p>`;
+        
+        setTimeout(() => {
+            let targetPage = 'outfits.html';
+            if (style === 'formal') {
+                targetPage = 'outfits1.html';
+            } else if (style === 'trendy') {
+                targetPage = 'trendy.html';
+            } else if (style === 'casual') {
+                targetPage = 'casual.html';
+            }
+            window.location.href = targetPage;
+        }, 2000);
+    }
+</script>
+</body>
+</html>
