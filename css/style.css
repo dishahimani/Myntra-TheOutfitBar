@@ -578,9 +578,9 @@ body, html {
 .company-name {
  /* font-family: Bradley Hand, cursive; */
   font-family: Apple Chancery, cursive;
-  font-size: 45px; /* Adjust font size as needed */
+  font-size: 45px; 
   color: black;
-  margin-left: 1px; /* Adjust spacing */
+  margin-left: 1px; 
 }
 
 .nav-links {
@@ -592,13 +592,13 @@ body, html {
 }
 
 .nav-links li {
-  margin: 0 15px; /* Adjust spacing */
+  margin: 0 15px; 
 }
 
 .nav-links li a {
   text-decoration: none;
   color: black;
-  font-size: 25px; /* Adjust font size as needed */
+  font-size: 25px; 
   transition: color 0.3s;
 }
 
@@ -650,6 +650,7 @@ footer {
   .heading {
     color: black;
     margin-bottom: 10px;
+    
     font-size: 25px;
   }
   
@@ -723,116 +724,6 @@ footer {
     color: black;
     font-size: 1.2rem;
   }
-
-/* About Section 
-
-
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f4f4f4;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  padding: 20px;
-}
-
-.blog-cards-container {
-  margin-top: 150px;
-}
-
-.blog-card {
-  width: 300px;
-  margin: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  background-color: #fff;
-}
-
-.blog-card.alt {
-  background-color: #f7f7f7;
-}
-
-.blog-card .meta {
-  position: relative;
-  height: 200px; 
-}
-
-.blog-card .meta .photo {
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-}
-
-.blog-card .description {
-  padding: 20px;
-}
-
-.blog-card .description h1 {
-  font-size: 1.5em;
-  margin-bottom: 10px;
-  color: #333;
-}
-
-.blog-card .description p {
-  font-size: 1em;
-  color: #666;
-}
-
-.blog-card .description p:last-child {
-  margin-bottom: 0;
-}
-
-*/
-/* New About Section Styles 
-#about-section {
-  padding: 150px 0 0 0;
-  background-color: #f9f9f9;
-}
-
-.about-card {
-  display: flex;
-  margin-bottom: 20px;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.about-card.alt {
-  flex-direction: row-reverse;
-}
-
-.about-meta {
-  flex: 1;
-  position: relative;
-}
-
-.about-photo {
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-}
-
-.about-description {
-  flex: 2;
-  padding: 20px;
-  background-color: #fff;
-}
-
-.about-description h1 {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-.about-description p {
-  font-size: 16px;
-  line-height: 1.6;
-}
-
-*/
 
 /* flashards for about section */
 body {
